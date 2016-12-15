@@ -4,6 +4,7 @@
 <dict>
 	<key>childOrder</key>
 	<array>
+		<string>iOS实例代码</string>
 		<string>iOS开源类库</string>
 		<string>iOS学习笔记</string>
 	</array>
@@ -19,6 +20,16 @@
 				<dict>
 					<key>cce0903d08ca9167866cc48bc7457ca61fe238a2ee2efa2f6a475cd7e3e97573</key>
 					<integer>2</integer>
+				</dict>
+			</dict>
+			<key>iOS实例代码</key>
+			<dict>
+				<key>lastModification</key>
+				<real>503497408.27560103</real>
+				<key>version</key>
+				<dict>
+					<key>cce0903d08ca9167866cc48bc7457ca61fe238a2ee2efa2f6a475cd7e3e97573</key>
+					<integer>8</integer>
 				</dict>
 			</dict>
 			<key>iOS开源类库</key>
@@ -40,7 +51,7 @@
 		<key>childOrder</key>
 		<dict>
 			<key>cce0903d08ca9167866cc48bc7457ca61fe238a2ee2efa2f6a475cd7e3e97573</key>
-			<integer>5</integer>
+			<integer>8</integer>
 		</dict>
 	</dict>
 </dict>
