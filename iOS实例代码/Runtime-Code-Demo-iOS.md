@@ -1,5 +1,5 @@
 
-# [Demo-iOS][1]
+### 完整代码：[Demo-iOS][1]
 
 	//
 	//  ViewController.m
@@ -151,6 +151,30 @@
 	
 	@end
 	
+	///-----------------------------------------------------------------------------
+	/// http://tech.glowing.com/cn/implement-kvo
+	///-----------------------------------------------------------------------------
+	#pragma mark - 如何自己动手实现 KVO -
+	
+	/**
+	 打印一个类的全部方法
+	 http://tech.glowing.com/cn/implement-kvo
+	 */
+	static NSArray *ClassMethodNames(Class c)
+	{
+	    NSMutableArray *array = [NSMutableArray array];
+	    
+	    unsigned int methodCount = 0;
+	    Method *methodList = class_copyMethodList(c, &methodCount);
+	    unsigned int i;
+	    for(i = 0; i < methodCount; i++) {
+	        [array addObject: NSStringFromSelector(method_getName(methodList[i]))];
+	    }
+	    free(methodList);
+	    
+	    return array;
+	}
+	
 	
 	@interface ViewController ()
 	
@@ -159,9 +183,22 @@
 	@implementation ViewController
 	
 	- (void)viewDidLoad {
+	    
 	    [super viewDidLoad];
-	    self.associatedObject = @"Hello, AssociatedObject!";
-	    NSLog(@"%@", self.associatedObject);
+	    
+	//    self.associatedObject = @"Hello, AssociatedObject!";
+	//    NSLog(@"%@", self.associatedObject);
+	    
+	//    NSArray *array = ClassMethodNames([UIViewController class]);
+	//    for (NSString *method in array) {
+	//        NSLog(@"----%@", method);
+	//    }
+	    
+	    if ([self hasSelector:@selector(viewDidLoad)]) {
+	        NSLog(@"true");
+	    } else {
+	        NSLog(@"false");
+	    }
 	}
 	
 	- (void)viewDidAppear:(BOOL)animated {
@@ -174,8 +211,36 @@
 	    NSLog(@"---- viewDidAppear 位置1 ----");
 	}
 	
+	///-----------------------------------------------------------------------------
+	/// http://tech.glowing.com/cn/implement-kvo
+	///-----------------------------------------------------------------------------
+	#pragma mark - 如何自己动手实现 KVO -
+	
+	/**
+	 判断一个类是否实现了某个方法
+	 http://tech.glowing.com/cn/implement-kvo
+	 */
+	- (BOOL)hasSelector:(SEL)selector
+	{
+	    Class clazz = object_getClass(self);
+	    unsigned int methodCount = 0;
+	    Method* methodList = class_copyMethodList(clazz, &methodCount);
+	    for (unsigned int i = 0; i < methodCount; i++) {
+	        SEL thisSelector = method_getName(methodList[i]);
+	        if (thisSelector == selector) {
+	            free(methodList);
+	            return YES;
+	        }
+	    }
+	    
+	    free(methodList);
+	    return NO;
+	}
+	
 	@end
 	
 	
+ 
+ 
 
 [1]:	https://github.com/mrhuangyuhui/demo-ios

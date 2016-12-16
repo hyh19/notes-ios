@@ -62,13 +62,13 @@
 	    static dispatch_once_t onceToken;
 	    dispatch_once(&onceToken, ^{
 	        Class class = [self class];
-	        
+	
 	        SEL originalSelector = @selector(viewWillAppear:);
 	        SEL swizzledSelector = @selector(fd_viewWillAppear:);
-	        
+	
 	        Method originalMethod = class_getInstanceMethod(class, originalSelector);
 	        Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
-	        
+	
 	        BOOL success = class_addMethod(class, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
 	        if (success) {
 	            class_replaceMethod(class, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
@@ -82,7 +82,7 @@
 	{
 	    // Forward to primary implementation.
 	    [self fd_viewWillAppear:animated];
-	    
+	
 	    if (self.fd_willAppearInjectBlock) {
 	        self.fd_willAppearInjectBlock(self, animated);
 	    }
@@ -101,13 +101,13 @@
 	    static dispatch_once_t onceToken;
 	    dispatch_once(&onceToken, ^{
 	        Class class = [self class];
-	        
+	
 	        SEL originalSelector = @selector(pushViewController:animated:);
 	        SEL swizzledSelector = @selector(fd_pushViewController:animated:);
-	        
+	
 	        Method originalMethod = class_getInstanceMethod(class, originalSelector);
 	        Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
-	        
+	
 	        BOOL success = class_addMethod(class, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
 	        if (success) {
 	            class_replaceMethod(class, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
@@ -120,7 +120,7 @@
 	- (void)fd_pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 	{
 	    if (![self.interactivePopGestureRecognizer.view.gestureRecognizers containsObject:self.fd_fullscreenPopGestureRecognizer]) {
-	        
+	
 	        // Add our own gesture recognizer to where the onboard screen edge pan gesture recognizer is attached to.
 	        [self.interactivePopGestureRecognizer.view addGestureRecognizer:self.fd_fullscreenPopGestureRecognizer];
 	
@@ -134,10 +134,10 @@
 	        // Disable the onboard gesture recognizer.
 	        self.interactivePopGestureRecognizer.enabled = NO;
 	    }
-	    
+	
 	    // Handle perferred navigation bar appearance.
 	    [self fd_setupViewControllerBasedNavigationBarAppearanceIfNeeded:viewController];
-	    
+	
 	    // Forward to primary implementation.
 	    if (![self.viewControllers containsObject:viewController]) {
 	        [self fd_pushViewController:viewController animated:animated];

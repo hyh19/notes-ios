@@ -6,12 +6,12 @@
 	
 	/**
 	 Associated Objects—or Associative References, as they were originally known—are a feature of the Objective-C 2.0 runtime, introduced in OS X Snow Leopard (available in iOS 4). The term refers to the following three C functions declared in <objc/runtime.h>, which allow objects to associate arbitrary values for keys at runtime:
-	 
+	
 	 objc_setAssociatedObject
 	 objc_getAssociatedObject
 	 objc_removeAssociatedObjects
 	 Why is this useful? It allows developers to add custom properties to existing classes in categories, which is an otherwise notable shortcoming for Objective-C.
-	 
+	
 	 http://nshipster.com/associated-objects
 	 */
 	@interface NSObject (AssociatedObject)
@@ -26,11 +26,11 @@
 	 It is often recommended that they key be a static char—or better yet, the
 	 pointer to one. Basically, an arbitrary value that is guaranteed to be constant,
 	 unique, and scoped for use within getters and setters:
-	 
+	
 	 static char kAssociatedObjectKey;
-	 
+	
 	 objc_getAssociatedObject(self, &kAssociatedObjectKey);
-	 
+	
 	 http://nshipster.com/associated-objects
 	 */
 	- (void)setAssociatedObject:(id)object {
@@ -94,7 +94,7 @@
 	    if (!panGestureRecognizer) {
 	        panGestureRecognizer = [[UIPanGestureRecognizer alloc] init];
 	        panGestureRecognizer.maximumNumberOfTouches = 1;
-	        
+	
 	        objc_setAssociatedObject(self, _cmd, panGestureRecognizer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 	    }
 	    return panGestureRecognizer;
