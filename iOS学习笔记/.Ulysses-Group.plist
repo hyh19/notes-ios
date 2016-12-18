@@ -6,6 +6,16 @@
 	<dict>
 		<key>sheetClusters</key>
 		<dict>
+			<key>iOS学习笔记：Responder Chain.md</key>
+			<dict>
+				<key>lastModification</key>
+				<real>503737382.259736</real>
+				<key>version</key>
+				<dict>
+					<key>cce0903d08ca9167866cc48bc7457ca61fe238a2ee2efa2f6a475cd7e3e97573</key>
+					<integer>22</integer>
+				</dict>
+			</dict>
 			<key>iOS学习笔记：RunLoop.md</key>
 			<dict>
 				<key>lastModification</key>
@@ -31,6 +41,9 @@
 	<key>sheetClusters</key>
 	<array>
 		<array>
+			<string>iOS学习笔记：Responder Chain.md</string>
+		</array>
+		<array>
 			<string>iOS学习笔记：RunLoop.md</string>
 		</array>
 		<array>
@@ -44,7 +57,7 @@
 		<key>sheetClusters</key>
 		<dict>
 			<key>cce0903d08ca9167866cc48bc7457ca61fe238a2ee2efa2f6a475cd7e3e97573</key>
-			<integer>16</integer>
+			<integer>22</integer>
 		</dict>
 	</dict>
 </dict>
