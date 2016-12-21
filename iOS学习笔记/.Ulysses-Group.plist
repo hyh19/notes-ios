@@ -2,10 +2,41 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>childOrder</key>
+	<array>
+		<string>API</string>
+	</array>
 	<key>resolutionData</key>
 	<dict>
+		<key>childOrder</key>
+		<dict>
+			<key>API</key>
+			<dict>
+				<key>lastModification</key>
+				<real>503989100.05933702</real>
+				<key>version</key>
+				<dict>
+					<key>cce0903d08ca9167866cc48bc7457ca61fe238a2ee2efa2f6a475cd7e3e97573</key>
+					<integer>3</integer>
+				</dict>
+			</dict>
+		</dict>
 		<key>sheetClusters</key>
 		<dict>
+			<key>iOS-API-Note-UIKit.md</key>
+			<dict>
+				<key>explicitUnassignment</key>
+				<true/>
+				<key>firstUnassignment</key>
+				<real>503989106.429712</real>
+				<key>lastModification</key>
+				<real>503989106.429712</real>
+				<key>version</key>
+				<dict>
+					<key>cce0903d08ca9167866cc48bc7457ca61fe238a2ee2efa2f6a475cd7e3e97573</key>
+					<integer>27</integer>
+				</dict>
+			</dict>
 			<key>iOS学习笔记：Responder Chain.md</key>
 			<dict>
 				<key>lastModification</key>
@@ -44,6 +75,9 @@
 			<string>iOS学习笔记：Responder Chain.md</string>
 		</array>
 		<array>
+			<string>iOS-API-Note-UIKit.md</string>
+		</array>
+		<array>
 			<string>iOS学习笔记：RunLoop.md</string>
 		</array>
 		<array>
@@ -54,10 +88,15 @@
 	<integer>1</integer>
 	<key>versioning</key>
 	<dict>
+		<key>childOrder</key>
+		<dict>
+			<key>cce0903d08ca9167866cc48bc7457ca61fe238a2ee2efa2f6a475cd7e3e97573</key>
+			<integer>3</integer>
+		</dict>
 		<key>sheetClusters</key>
 		<dict>
 			<key>cce0903d08ca9167866cc48bc7457ca61fe238a2ee2efa2f6a475cd7e3e97573</key>
-			<integer>22</integer>
+			<integer>27</integer>
 		</dict>
 	</dict>
 </dict>
