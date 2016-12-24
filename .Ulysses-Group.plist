@@ -7,11 +7,22 @@
 		<string>iOS实例代码</string>
 		<string>iOS开源类库</string>
 		<string>iOS学习笔记</string>
+		<string>iOS API Notes</string>
 	</array>
 	<key>resolutionData</key>
 	<dict>
 		<key>childOrder</key>
 		<dict>
+			<key>iOS API Notes</key>
+			<dict>
+				<key>lastModification</key>
+				<real>504245161.105676</real>
+				<key>version</key>
+				<dict>
+					<key>cce0903d08ca9167866cc48bc7457ca61fe238a2ee2efa2f6a475cd7e3e97573</key>
+					<integer>16</integer>
+				</dict>
+			</dict>
 			<key>iOS学习笔记</key>
 			<dict>
 				<key>lastModification</key>
@@ -51,7 +62,7 @@
 		<key>childOrder</key>
 		<dict>
 			<key>cce0903d08ca9167866cc48bc7457ca61fe238a2ee2efa2f6a475cd7e3e97573</key>
-			<integer>8</integer>
+			<integer>16</integer>
 		</dict>
 	</dict>
 </dict>
